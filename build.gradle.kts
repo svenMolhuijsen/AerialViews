@@ -23,3 +23,7 @@ allprojects {
         google()
     }
 }
+
+task<Delete>("clean") {
+    delete(rootProject.buildDir)
+}
