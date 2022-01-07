@@ -56,7 +56,6 @@ android {
                 if (keystoreFile.exists()) {
                     val keystoreProperties = Properties()
                     keystoreProperties.load(FileInputStream(keystoreFile))
-
                     flavor.signingConfig = android.signingConfigs.create(flavor.name)
                     flavor.signingConfig?.storeFile = rootProject.file(keystoreProperties["storeFile"]!!)
                     flavor.signingConfig?.storePassword = keystoreProperties["storePassword"] as String?
@@ -72,7 +71,7 @@ android {
         }
     }
 
-    flavorDimensions("version")
+    flavorDimensions.add("version")
     productFlavors {
         create("github") {
             dimension = "version"
