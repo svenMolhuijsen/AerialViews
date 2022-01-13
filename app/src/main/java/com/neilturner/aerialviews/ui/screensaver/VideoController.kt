@@ -25,6 +25,7 @@ class VideoController(context: Context) : OnPlayerEventListener {
     private var alternateText: Boolean
     private var previousVideo: Boolean
 
+
     init {
         val inflater = LayoutInflater.from(context)
         binding = DataBindingUtil.inflate(inflater, R.layout.aerial_activity, null, false)
